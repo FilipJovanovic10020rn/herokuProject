@@ -52,7 +52,7 @@ app.get("/login",(req,res)  =>{
 app.use(express.static(path.join(__dirname, 'static')));
 
 
-app.listen({ port: 8000 }, async () => {
+app.listen({ port: process.env.PORT || 8000 }, async () => {
     await sequelize.authenticate(),
     console.log("start")
 })
